@@ -1116,7 +1116,7 @@
       .lyrics-panel {
         bottom: 2.25rem;
         width: min(calc(100vw - 0.9rem), 560px);
-        height: 3.3rem;
+        height: 3.65rem;
       }
 
       .lyrics-track {
@@ -1125,7 +1125,7 @@
 
       .lyric-line {
         width: min(95%, 530px);
-        font-size: clamp(0.82rem, 3.35vw, 1.05rem);
+        font-size: clamp(0.96rem, 4.05vw, 1.18rem);
       }
 
 
@@ -1214,7 +1214,7 @@
       .lyrics-panel {
         bottom: 2rem;
         width: min(calc(100vw - 0.68rem), 440px);
-        height: 2.95rem;
+        height: 3.35rem;
       }
 
       .lyrics-track {
@@ -1223,7 +1223,7 @@
 
       .lyric-line {
         width: min(96%, 420px);
-        font-size: clamp(0.74rem, 3.8vw, 0.92rem);
+        font-size: clamp(0.86rem, 4.55vw, 1.04rem);
       }
 
 
