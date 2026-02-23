@@ -24,12 +24,13 @@
     html,
     body {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
     }
 
     body {
       margin: 0;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       color: #f5f7ff;
       font-family: "Garamond", "Palatino Linotype", "Book Antiqua", serif;
       background: linear-gradient(180deg, var(--night-soft) 0%, var(--night-mid) 42%, var(--night-deep) 92%);
@@ -38,8 +39,10 @@
     .scene-root {
       position: relative;
       width: 100%;
-      min-height: 100vh;
-      overflow: hidden;
+      min-height: 100svh;
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: clamp(4.2rem, 8vh, 5.8rem) 0 clamp(4.2rem, 9vh, 6rem);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -996,14 +999,14 @@
 
     @media (max-width: 640px) {
       .verse {
-        top: 0.72rem;
-        right: 0.72rem;
+        top: 0.44rem;
+        right: 0.62rem;
         font-size: 0.68rem;
       }
 
       .promise-banner {
-        top: 0.48rem;
-        width: min(93vw, 680px);
+        top: 1.88rem;
+        width: min(calc(100vw - 1rem), 680px);
       }
 
       .promise-quote {
@@ -1097,8 +1100,8 @@
       }
 
       .promise-banner {
-        top: 0.4rem;
-        width: min(95vw, 480px);
+        top: 1.64rem;
+        width: min(calc(100vw - 0.72rem), 480px);
       }
 
       .promise-quote {
