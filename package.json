@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
-    "build:postcss": "postcss ./src/input.css -o ./dist/styles.css --env production"
+    "build:postcss": "postcss ./src/input.css -o ./dist/styles.css --env production",
+    "cache-bust": "node ./scripts/cache-bust.cjs",
+    "release": "npm run build && npm run cache-bust"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
