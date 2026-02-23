@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowers For You</title>
+    <link rel="stylesheet" href="./dist/styles.css" />
+</head>
+<body>
+  <div id="app" class="scene-root">
+    <!-- Sky Layer -->
+    <div id="sky-layer"></div>
+    <div id="nebula-layer" aria-hidden="true"></div>
+    <div id="vignette-layer" aria-hidden="true"></div>
+
+    <!-- Stars Layer -->
+    <div id="stars-layer"></div>
+
+    <!-- Meteor Container -->
+    <div id="meteor-container"></div>
+
+    <!-- Top-right Verse -->
+    <p class="verse">Jeremiah 29:11</p>
+
+    <!-- Top Scripture Bubble -->
+    <div id="promise-banner" class="promise-banner" aria-hidden="true">
+      <p id="promise-typing" class="promise-quote"></p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="scene-content">
+      <p class="romantic-line">My heart finds home in your love.</p>
+
+      <!-- Flowers -->
+      <section id="flowers-shell" class="flowers-shell">
+        <!-- Sunflower -->
+        <article class="flower sunflower" aria-label="Sunflower">
+          <div class="stem flower__line">
+            <div class="flower__line__leaf flower__line__leaf--1"></div>
+            <div class="flower__line__leaf flower__line__leaf--2"></div>
+            <div class="flower__line__leaf flower__line__leaf--3"></div>
+            <div class="flower__line__leaf flower__line__leaf--4"></div>
+          </div>
+          <div class="bloom flower__leafs">
+            <span class="petal" style="--i:0;"></span>
+            <span class="petal" style="--i:1;"></span>
+            <span class="petal" style="--i:2;"></span>
+            <span class="petal" style="--i:3;"></span>
+            <span class="petal" style="--i:4;"></span>
+            <span class="petal" style="--i:5;"></span>
+            <span class="petal" style="--i:6;"></span>
+            <span class="petal" style="--i:7;"></span>
+            <span class="petal" style="--i:8;"></span>
+            <span class="petal" style="--i:9;"></span>
+            <span class="petal" style="--i:10;"></span>
+            <span class="petal" style="--i:11;"></span>
+            <span class="petal" style="--i:12;"></span>
+            <span class="petal" style="--i:13;"></span>
+            <span class="petal" style="--i:14;"></span>
+            <span class="petal" style="--i:15;"></span>
+            <div class="center"></div>
+            <span class="flower__light flower__light--1"></span>
+            <span class="flower__light flower__light--2"></span>
+            <span class="flower__light flower__light--3"></span>
+            <span class="flower__light flower__light--4"></span>
+            <span class="flower__light flower__light--5"></span>
+            <span class="flower__light flower__light--6"></span>
+          </div>
+        </article>
+
+        <!-- Daisy -->
+        <article class="flower daisy" aria-label="Daisy">
+          <div class="stem flower__line">
+            <div class="flower__line__leaf flower__line__leaf--1"></div>
+            <div class="flower__line__leaf flower__line__leaf--2"></div>
+            <div class="flower__line__leaf flower__line__leaf--3"></div>
+            <div class="flower__line__leaf flower__line__leaf--4"></div>
+          </div>
+          <div class="bloom flower__leafs">
+            <span class="petal" style="--i:0;"></span>
+            <span class="petal" style="--i:1;"></span>
+            <span class="petal" style="--i:2;"></span>
+            <span class="petal" style="--i:3;"></span>
+            <span class="petal" style="--i:4;"></span>
+            <span class="petal" style="--i:5;"></span>
+            <span class="petal" style="--i:6;"></span>
+            <span class="petal" style="--i:7;"></span>
+            <span class="petal" style="--i:8;"></span>
+            <span class="petal" style="--i:9;"></span>
+            <span class="petal" style="--i:10;"></span>
+            <span class="petal" style="--i:11;"></span>
+            <span class="petal" style="--i:12;"></span>
+            <span class="petal" style="--i:13;"></span>
+            <span class="petal" style="--i:14;"></span>
+            <span class="petal" style="--i:15;"></span>
+            <div class="center"></div>
+            <span class="flower__light flower__light--1"></span>
+            <span class="flower__light flower__light--2"></span>
+            <span class="flower__light flower__light--3"></span>
+            <span class="flower__light flower__light--4"></span>
+            <span class="flower__light flower__light--5"></span>
+            <span class="flower__light flower__light--6"></span>
+          </div>
+        </article>
+
+        <div class="botanical-floor" aria-hidden="true">
+          <span class="frond" style="--fx:6%;--fw:72px;--fh:30px;--fa:-24deg;--fd:0.08s;"></span>
+          <span class="frond" style="--fx:13%;--fw:80px;--fh:34px;--fa:-15deg;--fd:0.18s;"></span>
+          <span class="frond" style="--fx:24%;--fw:88px;--fh:36px;--fa:-8deg;--fd:0.24s;"></span>
+          <span class="frond" style="--fx:34%;--fw:74px;--fh:30px;--fa:-2deg;--fd:0.3s;"></span>
+          <span class="frond" style="--fx:48%;--fw:84px;--fh:34px;--fa:0deg;--fd:0.34s;"></span>
+          <span class="frond" style="--fx:58%;--fw:70px;--fh:29px;--fa:7deg;--fd:0.4s;"></span>
+          <span class="frond" style="--fx:66%;--fw:86px;--fh:36px;--fa:11deg;--fd:0.46s;--ff:-1;"></span>
+          <span class="frond" style="--fx:77%;--fw:78px;--fh:31px;--fa:18deg;--fd:0.52s;--ff:-1;"></span>
+          <span class="frond" style="--fx:86%;--fw:70px;--fh:28px;--fa:24deg;--fd:0.6s;--ff:-1;"></span>
+
+          <span class="base-leaf base-leaf--1"></span>
+          <span class="base-leaf base-leaf--2"></span>
+          <span class="base-leaf base-leaf--3"></span>
+          <span class="base-leaf base-leaf--4"></span>
+          <span class="base-leaf base-leaf--5"></span>
+          <span class="base-leaf base-leaf--6"></span>
+
+          <span class="mini-grass mini-grass--short" style="--x:4%;--h:30px;--w:3px;--o:0.9;--d:0.05s;--r:-12deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:10%;--h:38px;--w:4px;--o:0.96;--d:0.2s;--r:-8deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:16%;--h:26px;--w:2.6px;--o:0.86;--d:0.15s;--r:-5deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:23%;--h:44px;--w:4.2px;--o:0.98;--d:0.25s;--r:-10deg;"></span>
+          <span class="mini-grass" style="--x:29%;--h:36px;--w:3.3px;--o:0.92;--d:0.3s;--r:-6deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:35%;--h:40px;--w:3.8px;--o:0.95;--d:0.4s;--r:-3deg;"></span>
+          <span class="mini-grass" style="--x:43%;--h:34px;--w:3.2px;--o:0.9;--d:0.35s;--r:2deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:50%;--h:46px;--w:4.6px;--o:1;--d:0.45s;--r:0deg;"></span>
+          <span class="mini-grass" style="--x:57%;--h:34px;--w:3.1px;--o:0.92;--d:0.55s;--r:3deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:63%;--h:41px;--w:3.9px;--o:0.96;--d:0.6s;--r:5deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:69%;--h:33px;--w:3px;--o:0.9;--d:0.5s;--r:7deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:75%;--h:45px;--w:4.3px;--o:0.99;--d:0.7s;--r:9deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:82%;--h:29px;--w:2.8px;--o:0.87;--d:0.65s;--r:6deg;"></span>
+          <span class="mini-grass" style="--x:88%;--h:38px;--w:3.7px;--o:0.95;--d:0.8s;--r:8deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:95%;--h:31px;--w:3px;--o:0.9;--d:0.75s;--r:12deg;"></span>
+
+          <span class="mini-grass mini-grass--short" style="--x:7%;--h:20px;--w:2.5px;--o:0.8;--d:0.12s;--r:-16deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:14%;--h:49px;--w:3.5px;--o:0.97;--d:0.28s;--r:-7deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:27%;--h:22px;--w:2.4px;--o:0.82;--d:0.24s;--r:-9deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:40%;--h:50px;--w:3.7px;--o:0.98;--d:0.42s;--r:-1deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:46%;--h:21px;--w:2.3px;--o:0.8;--d:0.38s;--r:2deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:54%;--h:51px;--w:3.9px;--o:1;--d:0.52s;--r:1deg;"></span>
+          <span class="mini-grass mini-grass--short" style="--x:72%;--h:23px;--w:2.5px;--o:0.82;--d:0.62s;--r:8deg;"></span>
+          <span class="mini-grass mini-grass--tall" style="--x:91%;--h:47px;--w:3.6px;--o:0.97;--d:0.86s;--r:10deg;"></span>
+
+          <span class="grass-filler" style="--x:5%;--fw:10px;--fh:16px;--fr:-16deg;--fd:0.08s;"></span>
+          <span class="grass-filler" style="--x:11%;--fw:11px;--fh:18px;--fr:-11deg;--fd:0.14s;"></span>
+          <span class="grass-filler" style="--x:18%;--fw:9px;--fh:14px;--fr:-8deg;--fd:0.2s;"></span>
+          <span class="grass-filler" style="--x:25%;--fw:12px;--fh:19px;--fr:-10deg;--fd:0.26s;"></span>
+          <span class="grass-filler" style="--x:31%;--fw:10px;--fh:15px;--fr:-4deg;--fd:0.32s;"></span>
+          <span class="grass-filler" style="--x:37%;--fw:11px;--fh:18px;--fr:-2deg;--fd:0.37s;"></span>
+          <span class="grass-filler" style="--x:44%;--fw:9px;--fh:14px;--fr:1deg;--fd:0.43s;"></span>
+          <span class="grass-filler" style="--x:52%;--fw:12px;--fh:20px;--fr:0deg;--fd:0.5s;"></span>
+          <span class="grass-filler" style="--x:59%;--fw:10px;--fh:15px;--fr:4deg;--fd:0.56s;"></span>
+          <span class="grass-filler" style="--x:65%;--fw:11px;--fh:18px;--fr:7deg;--fd:0.6s;"></span>
+          <span class="grass-filler" style="--x:71%;--fw:9px;--fh:14px;--fr:9deg;--fd:0.66s;"></span>
+          <span class="grass-filler" style="--x:78%;--fw:12px;--fh:19px;--fr:11deg;--fd:0.72s;"></span>
+          <span class="grass-filler" style="--x:85%;--fw:10px;--fh:16px;--fr:13deg;--fd:0.78s;"></span>
+          <span class="grass-filler" style="--x:92%;--fw:11px;--fh:17px;--fr:15deg;--fd:0.84s;"></span>
+        </div>
+
+        <div id="sparkle-container" class="sparkle-container" aria-hidden="true"></div>
+      </section>
+
+      <div class="button-wrap">
+        <button id="missed-btn" type="button">Click me when you missed me. 🥹</button>
+        <div id="message-bubble" role="status" aria-live="polite">
+          You are always my favorite place.
+        </div>
+      </div>
+
+      <!-- Hidden Audio -->
+      <audio id="loveSong" preload="auto" style="display:none;" aria-hidden="true">
+        <source src="i-still-believe.mp3" type="audio/mpeg" />
+      </audio>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-sign">~kje</footer>
+  </div>
+
+  <script>
+    const starsLayer = document.getElementById("stars-layer");
+    const meteorContainer = document.getElementById("meteor-container");
+    const flowersShell = document.getElementById("flowers-shell");
+    const sparkleContainer = document.getElementById("sparkle-container");
+    const messageBubble = document.getElementById("message-bubble");
+    const missedBtn = document.getElementById("missed-btn");
+    const loveSong = document.getElementById("loveSong");
+    const promiseBanner = document.getElementById("promise-banner");
+    const promiseTyping = document.getElementById("promise-typing");
+    const promiseVerse = "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.";
+    const sweetLines = [
+      "You are always my favorite place.",
+      "Every heartbeat of mine whispers your name.",
+      "I fall for you more in every little moment.",
+      "Your smile feels like sunrise to my soul.",
+      "With you, ordinary nights become magic.",
+      "You are my calm, my joy, my home.",
+      "Loving you is the softest part of my life.",
+      "In every future I imagine, it is you.",
+      "You make my world gentler and brighter.",
+      "My heart is happiest when it is with you."
+    ];
+    let meteorLoopTimer = null;
+    let sparkleLoopTimer = null;
+    let resizeDebounce = null;
+    let lastSweetLineIndex = -1;
+    let promiseTypingTimer = null;
+    let promisePauseTimer = null;
+    let promiseCharIndex = 0;
+    let promiseIsDeleting = false;
+
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Build layered stars for richer depth.
+    function createStars() {
+      if (!starsLayer) return;
+      starsLayer.innerHTML = "";
+
+      const fragment = document.createDocumentFragment();
+      const areaFactor = Math.max(0.8, Math.min(1.5, window.innerWidth / 1280));
+      const count = Math.floor(86 * areaFactor);
+
+      for (let i = 0; i < count; i += 1) {
+        const star = document.createElement("span");
+        star.className = `star${Math.random() > 0.82 ? " bright" : ""}`;
+
+        const size = randomBetween(0.6, 2.7);
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${randomBetween(0, 100)}%`;
+        star.style.top = `${randomBetween(0, 100)}%`;
+        star.style.setProperty("--star-opacity", randomBetween(0.35, 1).toFixed(2));
+        star.style.setProperty("--twinkle-duration", `${randomBetween(3.8, 7.5).toFixed(2)}s`);
+        star.style.setProperty("--star-drift-duration", `${randomBetween(9, 18).toFixed(2)}s`);
+        star.style.animationDelay = `${randomBetween(0, 6).toFixed(2)}s`;
+
+        fragment.appendChild(star);
+      }
+
+      starsLayer.appendChild(fragment);
+    }
+
+    function createMeteor() {
+      if (!meteorContainer) return;
+
+      const meteor = document.createElement("span");
+      meteor.className = "meteor";
+
+      const width = randomBetween(100, 230);
+      const startX = randomBetween(-60, window.innerWidth);
+      const startY = randomBetween(-70, window.innerHeight * 0.38);
+      const duration = randomBetween(880, 1600);
+      const tx = randomBetween(230, 520);
+      const ty = (window.innerHeight - startY) + randomBetween(110, 220);
+      const rotation = randomBetween(35, 55);
+      const thickness = randomBetween(1.6, 2.6);
+
+      meteor.style.left = `${startX}px`;
+      meteor.style.top = `${startY}px`;
+      meteor.style.setProperty("--meteor-width", `${width}px`);
+      meteor.style.setProperty("--meteor-duration", `${duration}ms`);
+      meteor.style.setProperty("--tx", `${tx}px`);
+      meteor.style.setProperty("--ty", `${ty}px`);
+      meteor.style.setProperty("--meteor-rotation", `${rotation.toFixed(1)}deg`);
+      meteor.style.setProperty("--meteor-thickness", `${thickness.toFixed(2)}px`);
+      meteor.style.opacity = randomBetween(0.72, 1).toFixed(2);
+      meteor.style.animationDelay = `${randomBetween(0, 120).toFixed(0)}ms`;
+
+      meteor.addEventListener("animationend", () => meteor.remove(), { once: true });
+      meteorContainer.appendChild(meteor);
+    }
+
+    function spawnMeteors() {
+      createMeteor();
+      const nextSpawn = randomBetween(520, 1950);
+      meteorLoopTimer = window.setTimeout(spawnMeteors, nextSpawn);
+    }
+
+    function boostMeteors() {
+      const burst = window.setInterval(() => {
+        createMeteor();
+        if (Math.random() > 0.45) createMeteor();
+      }, 105);
+
+      window.setTimeout(() => {
+        window.clearInterval(burst);
+      }, 3000);
+    }
+
+    function createShinyParticle(boost = false) {
+      if (!sparkleContainer) return;
+
+      const particle = document.createElement("span");
+      particle.className = "shiny-particle";
+
+      const size = boost ? randomBetween(3.2, 7.6) : randomBetween(2.1, 5.3);
+      const x = randomBetween(8, 92);
+      const y = boost ? randomBetween(45, 86) : randomBetween(50, 88);
+      const drift = randomBetween(-34, 34);
+      const rise = boost ? randomBetween(76, 140) : randomBetween(56, 108);
+      const duration = boost ? randomBetween(1050, 1900) : randomBetween(1500, 2650);
+
+      particle.style.left = `${x}%`;
+      particle.style.top = `${y}%`;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.opacity = `${randomBetween(0.55, 1).toFixed(2)}`;
+      particle.style.setProperty("--sparkle-drift", `${drift.toFixed(1)}px`);
+      particle.style.setProperty("--sparkle-rise", `${rise.toFixed(1)}px`);
+      particle.style.setProperty("--sparkle-duration", `${duration.toFixed(0)}ms`);
+      particle.style.animationDelay = `${randomBetween(0, 220).toFixed(0)}ms`;
+
+      particle.addEventListener("animationend", () => particle.remove(), { once: true });
+      sparkleContainer.appendChild(particle);
+    }
+
+    function spawnShinyParticles() {
+      createShinyParticle(false);
+      if (Math.random() > 0.62) createShinyParticle(false);
+
+      const nextSpawn = randomBetween(190, 520);
+      sparkleLoopTimer = window.setTimeout(spawnShinyParticles, nextSpawn);
+    }
+
+    function getRandomSweetLine() {
+      if (!sweetLines.length) return "";
+      if (sweetLines.length === 1) return sweetLines[0];
+
+      let nextIndex = Math.floor(Math.random() * sweetLines.length);
+      while (nextIndex === lastSweetLineIndex) {
+        nextIndex = Math.floor(Math.random() * sweetLines.length);
+      }
+      lastSweetLineIndex = nextIndex;
+      return sweetLines[nextIndex];
+    }
+
+    function popPromiseBubble() {
+      if (!promiseBanner) return;
+      promiseBanner.classList.remove("is-popping");
+      void promiseBanner.offsetWidth;
+      promiseBanner.classList.add("is-popping");
+    }
+
+    function runPromiseVerseLoop() {
+      if (!promiseTyping) return;
+
+      const endPause = 3600;
+      const restartPause = 680;
+
+      const getPromiseDelay = (char, deleting = false) => {
+        if (!char) return deleting ? 22 : 48;
+        if (deleting) {
+          if (/[,.!?;:]/.test(char)) return 34;
+          if (char === " ") return 24;
+          return 22;
+        }
+        if (/[.!?]/.test(char)) return 220;
+        if (/[,:;]/.test(char)) return 165;
+        if (char === " ") return 36;
+        return 48;
+      };
+
+      if (!promiseIsDeleting) {
+        if (promiseCharIndex === 0) {
+          popPromiseBubble();
+        }
+
+        promiseCharIndex = Math.min(promiseCharIndex + 1, promiseVerse.length);
+        promiseTyping.textContent = promiseVerse.slice(0, promiseCharIndex);
+
+        if (promiseCharIndex >= promiseVerse.length) {
+          promiseIsDeleting = true;
+          promisePauseTimer = window.setTimeout(runPromiseVerseLoop, endPause);
+          return;
+        }
+
+        const nextChar = promiseVerse.charAt(promiseCharIndex);
+        promiseTypingTimer = window.setTimeout(runPromiseVerseLoop, getPromiseDelay(nextChar, false));
+        return;
+      }
+
+      promiseCharIndex = Math.max(promiseCharIndex - 1, 0);
+      promiseTyping.textContent = promiseVerse.slice(0, promiseCharIndex);
+
+      if (promiseCharIndex <= 0) {
+        promiseIsDeleting = false;
+        promisePauseTimer = window.setTimeout(runPromiseVerseLoop, restartPause);
+        return;
+      }
+
+      const removedChar = promiseVerse.charAt(promiseCharIndex);
+      promiseTypingTimer = window.setTimeout(runPromiseVerseLoop, getPromiseDelay(removedChar, true));
+    }
+
+    function handleButtonClick() {
+      if (messageBubble) {
+        messageBubble.textContent = getRandomSweetLine();
+        messageBubble.classList.remove("show");
+        void messageBubble.offsetWidth;
+        messageBubble.classList.add("show");
+      }
+
+      if (flowersShell) {
+        flowersShell.classList.add("glow-boost");
+        window.setTimeout(() => {
+          flowersShell.classList.remove("glow-boost");
+        }, 1500);
+      }
+
+      boostMeteors();
+      for (let i = 0; i < 14; i += 1) {
+        createShinyParticle(true);
+      }
+
+      if (loveSong) {
+        loveSong.volume = 0.9;
+        const playPromise = loveSong.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      }
+    }
+
+    missedBtn?.addEventListener("click", handleButtonClick);
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeDebounce);
+      resizeDebounce = window.setTimeout(createStars, 180);
+    });
+
+    createStars();
+    if (meteorLoopTimer) {
+      window.clearTimeout(meteorLoopTimer);
+    }
+    if (sparkleLoopTimer) {
+      window.clearTimeout(sparkleLoopTimer);
+    }
+    if (promiseTypingTimer) {
+      window.clearTimeout(promiseTypingTimer);
+    }
+    if (promisePauseTimer) {
+      window.clearTimeout(promisePauseTimer);
+    }
+    spawnMeteors();
+    spawnShinyParticles();
+    runPromiseVerseLoop();
+  </script>
+</body>
+</html>
