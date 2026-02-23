@@ -203,121 +203,73 @@
     const promiseBanner = document.getElementById("promise-banner");
     const promiseTyping = document.getElementById("promise-typing");
     const promiseVerse = "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.";
-    const lyricSections = [
-      {
-        type: "verse",
-        lines: [
-          "I come to You",
-          "Just as I am",
-          "Though I'm weak",
-          "You are my strength",
-          "I seek Your will",
-          "And not my own",
-          "You're in control",
-          "I'm never alone"
-        ]
-      },
-      {
-        type: "pre",
-        lines: [
-          "Although I've not seen it yet",
-          "I trust in Your perfect plan"
-        ]
-      },
-      {
-        type: "chorus",
-        lines: [
-          "I still believe",
-          "You are faithful",
-          "Still believe",
-          "You are good",
-          "You always keep your promise",
-          "Nothing's too hard for You",
-          "I still believe",
-          "You're my Healer",
-          "Still believe",
-          "I'm loved and redeemed",
-          "Nothing can separate me",
-          "From the love You have for me"
-        ]
-      },
-      {
-        type: "verse",
-        lines: [
-          "I look to You",
-          "When I'm weary",
-          "My soul is tired",
-          "You comfort me",
-          "I surrender",
-          "My heart to You",
-          "For there's none other",
-          "Who'll love me like You do"
-        ]
-      },
-      {
-        type: "pre",
-        lines: [
-          "Although I've not seen it yet",
-          "I trust in Your perfect plan"
-        ]
-      },
-      {
-        type: "chorus",
-        lines: [
-          "I still believe",
-          "You are faithful",
-          "Still believe",
-          "You are good",
-          "You always keep your promise",
-          "Nothing's too hard for You",
-          "I still believe",
-          "You're my Healer",
-          "Still believe",
-          "I'm loved and redeemed",
-          "Nothing can separate me",
-          "From the love You have for me"
-        ]
-      },
-      {
-        type: "bridge",
-        lines: [
-          "For I know the plans I have for you",
-          "Will you trust me to do what I want to do",
-          "My grace is always sufficient for you",
-          "Just hold on to my promises and believe"
-        ]
-      },
-      {
-        type: "chorus",
-        lines: [
-          "So I believe",
-          "You are faithful",
-          "I believe",
-          "You are good",
-          "You always keep your promise",
-          "Nothing's too hard for You",
-          "And I believe",
-          "You're my Healer",
-          "I believe",
-          "I'm loved and redeemed",
-          "Loving Father, Mighty King",
-          "You're all that I need",
-          "For Jesus, I still believe"
-        ]
-      }
+    const lyricIdleText = "Press the button above⬆️😇.";
+    const lyricCountdownPrefix = "Lyrics will start in";
+    const lyricStartOffset = 0;
+    const lyricAutoTranscribedDuration = 219.777;
+    const lyricAutoTimeline = [
+      { t: 6.36, line: "I come to You" },
+      { t: 10.46, line: "Just as I am" },
+      { t: 13.16, line: "Though I'm weak" },
+      { t: 16.62, line: "You are my strength" },
+      { t: 19.92, line: "I seek Your will" },
+      { t: 23.76, line: "And not my own" },
+      { t: 26.72, line: "You're in control" },
+      { t: 29.00, line: "I'm never alone" },
+      { t: 32.62, line: "Although I've not seen it yet" },
+      { t: 40.62, line: "I trust in Your perfect plan" },
+      { t: 47.10, line: "I still believe" },
+      { t: 49.26, line: "You are faithful" },
+      { t: 51.32, line: "Still believe" },
+      { t: 52.50, line: "You are good" },
+      { t: 54.84, line: "You always keep your promise" },
+      { t: 58.10, line: "Nothing's too hard for You" },
+      { t: 60.80, line: "I still believe" },
+      { t: 62.86, line: "You're my Healer" },
+      { t: 64.72, line: "Still believe" },
+      { t: 65.94, line: "I'm loved and redeemed" },
+      { t: 68.10, line: "Nothing can separate me" },
+      { t: 71.50, line: "From the love You have for me" },
+      { t: 78.94, line: "I look to You" },
+      { t: 81.58, line: "When I'm weary" },
+      { t: 85.16, line: "My soul is tired" },
+      { t: 88.72, line: "You comfort me" },
+      { t: 92.32, line: "I surrender" },
+      { t: 94.90, line: "My heart to You" },
+      { t: 98.50, line: "For there's none other" },
+      { t: 102.68, line: "Who'll love me like You do" },
+      { t: 106.94, line: "Although I've not seen it yet" },
+      { t: 112.14, line: "I trust in Your perfect plan" },
+      { t: 119.30, line: "I still believe" },
+      { t: 121.90, line: "You are faithful" },
+      { t: 123.94, line: "Still believe" },
+      { t: 125.16, line: "You are good" },
+      { t: 127.02, line: "You always keep your promise" },
+      { t: 130.78, line: "Nothing's too hard for You" },
+      { t: 133.48, line: "I still believe" },
+      { t: 135.54, line: "You're my Healer" },
+      { t: 137.40, line: "Still believe" },
+      { t: 138.74, line: "I'm loved and redeemed" },
+      { t: 141.50, line: "Nothing can separate me" },
+      { t: 144.20, line: "From the love You have for me" },
+      { t: 151.40, line: "For I know the plans I have for you" },
+      { t: 157.26, line: "Will you trust me to do what I want to do" },
+      { t: 164.22, line: "My grace is always sufficient for you" },
+      { t: 170.74, line: "Just hold on to my promises and believe" },
+      { t: 177.40, line: "So I believe" },
+      { t: 179.12, line: "You are faithful" },
+      { t: 181.18, line: "I believe" },
+      { t: 182.48, line: "You are good" },
+      { t: 185.04, line: "You always keep your promise" },
+      { t: 188.32, line: "Nothing's too hard for You" },
+      { t: 190.88, line: "And I believe" },
+      { t: 192.62, line: "You're my Healer" },
+      { t: 194.80, line: "I believe" },
+      { t: 196.12, line: "I'm loved and redeemed" },
+      { t: 198.53, line: "Loving Father, Mighty King" },
+      { t: 201.52, line: "You're all that I need" },
+      { t: 205.88, line: "For Jesus, I still believe" }
     ];
-    const lyricSectionMultiplier = {
-      verse: 1,
-      pre: 1.04,
-      chorus: 1.14,
-      bridge: 1.08
-    };
-    const lyricSectionGap = {
-      verse: 0.42,
-      pre: 0.45,
-      chorus: 0.55,
-      bridge: 0.5
-    };
     const sweetLines = [
       "You are always my favorite place.",
       "Every heartbeat of mine whispers your name.",
@@ -341,6 +293,7 @@
     let activeLyricIndex = -1;
     let lyricTimeline = [];
     let lyricTimelineDuration = 0;
+    let lyricLastCountdownSecond = -1;
 
     function randomBetween(min, max) {
       return Math.random() * (max - min) + min;
@@ -469,88 +422,67 @@
       return sweetLines[nextIndex];
     }
 
-    function getLyricWeight(line, sectionType) {
-      const wordCount = line.trim().split(/\s+/).filter(Boolean).length;
-      const charCount = line.replace(/\s+/g, "").length;
-      const punctuationBoost = /[,.!?]/.test(line) ? 0.24 : 0;
-      const hookBoost = /(still believe|i believe)/i.test(line) ? 0.28 : 0;
-      const longLineBoost = charCount > 24 ? 0.2 : 0;
-      const sectionBoost = lyricSectionMultiplier[sectionType] || 1;
-      const baseWeight = wordCount * 0.92 + charCount * 0.028 + punctuationBoost + hookBoost + longLineBoost;
-      return Math.max(1, baseWeight * sectionBoost);
-    }
-
     function buildLyricTimelineFromDuration(durationSeconds) {
-      if (!lyricSections.length) {
+      if (!lyricAutoTimeline.length) {
         lyricTimeline = [];
         lyricTimelineDuration = 0;
         return;
       }
 
-      const safeDuration = Number.isFinite(durationSeconds) && durationSeconds > 40 ? durationSeconds : 256;
-      const introBuffer = Math.min(8.5, Math.max(2.8, safeDuration * 0.035));
-      const outroBuffer = Math.min(10, Math.max(3.4, safeDuration * 0.055));
-      const usableDuration = Math.max(42, safeDuration - introBuffer - outroBuffer);
-      const sectionPauseTotal = lyricSections.slice(0, -1).reduce((acc, section) => {
-        return acc + (lyricSectionGap[section.type] || 0.44);
-      }, 0);
+      const targetDuration = Number.isFinite(durationSeconds) && durationSeconds > 40
+        ? durationSeconds
+        : lyricAutoTranscribedDuration;
+      const scale = targetDuration / lyricAutoTranscribedDuration;
 
-      const weightedLines = [];
-      lyricSections.forEach((section) => {
-        section.lines.forEach((line) => {
-          weightedLines.push({
-            line,
-            sectionType: section.type,
-            weight: getLyricWeight(line, section.type)
-          });
-        });
-      });
-
-      const lyricOnlyDuration = Math.max(usableDuration - sectionPauseTotal, weightedLines.length * 0.74);
-      const totalWeight = weightedLines.reduce((sum, item) => sum + item.weight, 0);
-      let cursor = introBuffer;
-      let weightedIndex = 0;
-      const timeline = [];
-
-      lyricSections.forEach((section, sectionIndex) => {
-        section.lines.forEach(() => {
-          const current = weightedLines[weightedIndex];
-          if (!current) return;
-
-          timeline.push({
-            t: Number(cursor.toFixed(2)),
-            line: current.line
-          });
-
-          cursor += lyricOnlyDuration * (current.weight / totalWeight);
-          weightedIndex += 1;
-        });
-
-        if (sectionIndex < lyricSections.length - 1) {
-          cursor += lyricSectionGap[section.type] || 0.44;
-        }
-      });
-
-      lyricTimeline = timeline;
-      lyricTimelineDuration = safeDuration;
+      lyricTimeline = lyricAutoTimeline.map((entry) => ({
+        t: Number((entry.t * scale + lyricStartOffset).toFixed(2)),
+        line: entry.line
+      }));
+      lyricTimelineDuration = targetDuration;
     }
 
     function ensureLyricTimeline() {
-      const duration = loveSong && Number.isFinite(loveSong.duration) ? loveSong.duration : 0;
-      const needsRebuild = !lyricTimeline.length || (duration > 40 && Math.abs(duration - lyricTimelineDuration) > 0.6);
+      const duration = loveSong && Number.isFinite(loveSong.duration) ? loveSong.duration : lyricAutoTranscribedDuration;
+      const needsRebuild = !lyricTimeline.length || Math.abs(duration - lyricTimelineDuration) > 0.25;
       if (needsRebuild) {
         buildLyricTimelineFromDuration(duration);
       }
     }
 
+    function isLyricSystemText(text) {
+      const value = (text || "").trim();
+      return value === lyricIdleText || value.startsWith(`${lyricCountdownPrefix} `);
+    }
+
+    function updateLyricCountdownInline() {
+      if (!loveSong || !lyricTimeline.length || !lyricActiveEl) return;
+
+      const firstLyricTime = lyricTimeline[0].t;
+      const remaining = Math.max(0, firstLyricTime - loveSong.currentTime);
+      if (remaining <= 0.08) {
+        lyricLastCountdownSecond = -1;
+        return;
+      }
+
+      const secondsLeft = Math.ceil(remaining);
+      const currentText = (lyricActiveEl.textContent || "").trim();
+      if (secondsLeft !== lyricLastCountdownSecond || !currentText.startsWith(lyricCountdownPrefix)) {
+        const unit = secondsLeft === 1 ? "second" : "seconds";
+        lyricActiveEl.classList.remove("line-in");
+        lyricActiveEl.textContent = `${lyricCountdownPrefix} ${secondsLeft} ${unit}...`;
+      }
+      lyricLastCountdownSecond = secondsLeft;
+    }
+
     function resetLyricDisplay() {
       activeLyricIndex = -1;
+      lyricLastCountdownSecond = -1;
       if (lyricPrevEl) {
         lyricPrevEl.textContent = "";
         lyricPrevEl.classList.remove("rise-out");
       }
       if (lyricActiveEl) {
-        lyricActiveEl.textContent = "Press the button above⬆️😇.";
+        lyricActiveEl.textContent = lyricIdleText;
         lyricActiveEl.classList.remove("line-in");
       }
     }
@@ -567,7 +499,7 @@
       if (!lyricActiveEl || !lyricPrevEl || !nextLine) return;
 
       const currentText = (lyricActiveEl.textContent || "").trim();
-      if (!isInitial && currentText && currentText !== nextLine && currentText !== "Press the button above⬆️😇.") {
+      if (!isInitial && currentText && currentText !== nextLine && !isLyricSystemText(currentText)) {
         lyricPrevEl.textContent = currentText;
         lyricPrevEl.classList.remove("rise-out");
         void lyricPrevEl.offsetWidth;
@@ -586,11 +518,20 @@
       if (!lyricTimeline.length) return;
 
       const idx = getLyricIndexAtTime(loveSong.currentTime);
-      if (idx < 0) return;
+      if (idx < 0) {
+        if (activeLyricIndex !== -1) {
+          activeLyricIndex = -1;
+          lyricPrevEl.textContent = "";
+          lyricPrevEl.classList.remove("rise-out");
+        }
+        updateLyricCountdownInline();
+        return;
+      }
       if (!force && idx === activeLyricIndex) return;
 
       const firstUpdate = activeLyricIndex === -1;
       activeLyricIndex = idx;
+      lyricLastCountdownSecond = -1;
       showLyricLine(lyricTimeline[idx].line, firstUpdate);
     }
 
@@ -673,9 +614,19 @@
       }
 
       if (loveSong) {
+        ensureLyricTimeline();
+        const firstLyricTime = lyricTimeline.length ? lyricTimeline[0].t : 0;
+        const nearSongEnd = Number.isFinite(loveSong.duration) && loveSong.currentTime >= (loveSong.duration - 0.35);
+
+        // If replaying from mid/end, rewind so countdown always appears after click.
+        if (loveSong.paused && (nearSongEnd || loveSong.currentTime >= Math.max(0.1, firstLyricTime - 0.1))) {
+          loveSong.currentTime = 0;
+        }
+
         if (loveSong.currentTime < 0.15) {
           resetLyricDisplay();
         }
+        updateLyricCountdownInline();
         loveSong.volume = 0.9;
         const playPromise = loveSong.play();
         if (playPromise && typeof playPromise.catch === "function") {
@@ -686,6 +637,22 @@
     }
 
     missedBtn?.addEventListener("click", handleButtonClick);
+    loveSong?.addEventListener("loadedmetadata", () => {
+      if (!loveSong) return;
+      buildLyricTimelineFromDuration(loveSong.duration);
+      if (!loveSong.paused) {
+        syncLyricsToAudio(true);
+      }
+    });
+    loveSong?.addEventListener("durationchange", () => {
+      if (!loveSong) return;
+      if (Number.isFinite(loveSong.duration) && loveSong.duration > 40) {
+        buildLyricTimelineFromDuration(loveSong.duration);
+        if (!loveSong.paused) {
+          syncLyricsToAudio(true);
+        }
+      }
+    });
     loveSong?.addEventListener("play", () => syncLyricsToAudio(true));
     loveSong?.addEventListener("timeupdate", () => syncLyricsToAudio(false));
     loveSong?.addEventListener("seeked", () => syncLyricsToAudio(true));
@@ -709,6 +676,7 @@
     if (promisePauseTimer) {
       window.clearTimeout(promisePauseTimer);
     }
+    buildLyricTimelineFromDuration(loveSong && Number.isFinite(loveSong.duration) ? loveSong.duration : 0);
     resetLyricDisplay();
     spawnMeteors();
     spawnShinyParticles();
