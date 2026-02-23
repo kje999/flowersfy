@@ -971,6 +971,64 @@
       animation: bubbleFloat 2.5s ease forwards;
     }
 
+    .lyrics-panel {
+      position: absolute;
+      left: 50%;
+      bottom: 2.75rem;
+      width: min(90vw, 760px);
+      height: 3.75rem;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 38;
+    }
+
+    .lyrics-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0.9rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(170, 199, 255, 0.04));
+      box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.05),
+        0 8px 16px rgba(4, 12, 32, 0.24);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .lyric-line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(94%, 700px);
+      margin: 0;
+      text-align: center;
+      font-size: clamp(0.96rem, 2.05vw, 1.28rem);
+      line-height: 1.4;
+      letter-spacing: 0.015em;
+      color: rgba(239, 246, 255, 0.95);
+      text-shadow: 0 0 10px rgba(196, 223, 255, 0.4);
+      transform: translate(-50%, -50%);
+      will-change: transform, opacity;
+    }
+
+    .lyric-active {
+      opacity: 1;
+    }
+
+    .lyric-active.line-in {
+      animation: lyricActiveIn 520ms ease-out;
+    }
+
+    .lyric-prev {
+      opacity: 0;
+    }
+
+    .lyric-prev.rise-out {
+      animation: lyricRiseOut 860ms cubic-bezier(0.2, 0.76, 0.24, 1) forwards;
+    }
+
+
     .footer-sign {
       position: absolute;
       left: 50%;
@@ -1055,6 +1113,22 @@
         line-height: 1.35;
       }
 
+      .lyrics-panel {
+        bottom: 2.25rem;
+        width: min(calc(100vw - 0.9rem), 560px);
+        height: 3.3rem;
+      }
+
+      .lyrics-track {
+        border-radius: 0.75rem;
+      }
+
+      .lyric-line {
+        width: min(95%, 530px);
+        font-size: clamp(0.82rem, 3.35vw, 1.05rem);
+      }
+
+
       .botanical-floor {
         width: clamp(200px, 78vw, 300px);
         height: 72px;
@@ -1136,6 +1210,22 @@
         font-size: 0.76rem;
         padding: 0.4rem 0.7rem;
       }
+
+      .lyrics-panel {
+        bottom: 2rem;
+        width: min(calc(100vw - 0.68rem), 440px);
+        height: 2.95rem;
+      }
+
+      .lyrics-track {
+        border-radius: 0.65rem;
+      }
+
+      .lyric-line {
+        width: min(96%, 420px);
+        font-size: clamp(0.74rem, 3.8vw, 0.92rem);
+      }
+
 
       .frond {
         width: calc(var(--fw, 72px) * 0.66);
@@ -1323,6 +1413,28 @@
       100% {
         opacity: 0;
         transform: translate(-50%, -42px) scale(0.98);
+      }
+    }
+
+    @keyframes lyricRiseOut {
+      0% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -165%);
+      }
+    }
+
+    @keyframes lyricActiveIn {
+      0% {
+        opacity: 0.28;
+        transform: translate(-50%, -50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
       }
     }
 
